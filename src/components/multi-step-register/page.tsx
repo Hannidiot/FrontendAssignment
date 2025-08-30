@@ -53,12 +53,9 @@ export default function MultiStepRegister() {
         fileName: data.avatar?.name || 'No file uploaded',
       },
     };
+    console.log(`registration data: ${JSON.stringify(processedData, null, 2)}`);
 
-    toast.success('Registration submitted successfully!', {
-      action: {
-        label: 
-      }
-    });
+    toast.success('Registration submitted successfully!');
     setCurrentStep(COMPLETE_STEP);
   }, []);
 

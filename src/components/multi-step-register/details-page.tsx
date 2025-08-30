@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { UploadCloud } from 'lucide-react';
 
 export default function DetailsPage() {
   const { control } = useFormContext<FormValues>();
@@ -88,19 +89,36 @@ export default function DetailsPage() {
         <FormField
           control={control}
           name="avatar"
-          render={({ field: { onChange } }) => (
+          render={({ field }) => (
             <FormItem>
-              <FormLabel>Avatar (Optional)</FormLabel>
+              <FormLabel className="relative flex flex-col items-center justify-center w-full py-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                <div className=" text-center">
+                  <div className=" border p-2 rounded-md max-w-min mx-auto">
+                    <UploadCloud size={20} />
+                  </div>
+
+                  <p className="mt-2 text-sm text-gray-600">
+                    <span className="font-semibold">Avatar (Optional)</span>
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Click to upload PNG/JPEG file &#40;should be under 5 MB&#41;
+                  </p>
+                </div>
+              </FormLabel>
               <FormControl>
                 <input
                   type="file"
+                  className="hidden"
                   accept="image/png, image/jpeg"
                   onChange={(event) => {
                     const file = event.target.files?.[0];
-                    onChange(file);
+                    field.onChange(file);
                   }}
                 />
               </FormControl>
+              {field.value && (
+                <p className="text-sm text-gray-600">{field.value.name}</p>
+              )}
               <FormMessage />
             </FormItem>
           )}

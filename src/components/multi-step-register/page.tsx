@@ -11,6 +11,7 @@ import BasicInfoPage from './basic-info-page';
 import DetailsPage from './details-page';
 import AccountPage from './account-page';
 import ConfirmationPage from './confirmation-page';
+import CompletePage from './complete-page';
 
 const steps: Steps = [
   { id: 'complete', name: 'Complete', fields: [] },
@@ -155,6 +156,8 @@ export default function MultiStepRegister() {
               {currentStep === 2 && <DetailsPage />}
               {currentStep === 3 && <AccountPage />}
               {currentStep === 4 && <ConfirmationPage />}
+
+              {currentStep === COMPLETE_STEP && <CompletePage />}
 
               <div className="fixed md:static bottom-0 left-0 right-0 flex w-full justify-between items-center bg-white px-5 py-3 md:mb-4 md:mt-auto md:p-0 md:pt-4">
                 <Button

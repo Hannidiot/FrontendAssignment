@@ -78,7 +78,12 @@ export default function MultiStepRegister() {
 
   return (
     <>
-      <div className="bg-sidebar-mobile w-full h-full bg-contain bg-top bg-no-repeat top-0 fixed flex md:hidden" />
+      <div
+        className="w-full h-48 bg-contain bg-top bg-no-repeat top-0 fixed flex md:hidden z-0"
+        style={{
+          backgroundImage: 'url("/bg-sidebar-mobile.svg")',
+        }}
+      />
       {/* Steps - mobile */}
       <div className="flex my-5 space-x-4 md:hidden">
         {steps.map(
@@ -106,7 +111,10 @@ export default function MultiStepRegister() {
       <div className="z-10 w-full max-w-[500px] md:max-w-[1050px] p-4">
         <div className="bg-white flex md:h-min md:min-h-[600px] rounded-xl md:rounded-2xl p-4 shadow-xl">
           {/* Steps - desktop */}
-          <div className="hidden md:visible md:flex flex-col rounded-xl min-w-[274px] bg-sidebar-desktop bg-cover bg-bottom bg-no-repeat p-5 pt-7">
+          <div
+            className="hidden md:visible md:flex flex-col rounded-xl min-w-[274px] bg-cover bg-bottom bg-no-repeat p-5 pt-7"
+            style={{ backgroundImage: 'url("/bg-sidebar-desktop.svg")' }}
+          >
             {steps.map(
               (step, index) =>
                 index !== COMPLETE_STEP && (
@@ -152,7 +160,7 @@ export default function MultiStepRegister() {
                 <Button
                   disabled={currentStep === 1 || currentStep === COMPLETE_STEP}
                   type="button"
-                  className="shadow-none flex w-min text-nowrap text-base font-medium text-brand-cool-gray hover:text-brand-marine-blue disabled:invisible"
+                  className="flex w-min bg-brand-light-gray hover:bg-brand-cool-gray rounded-md md:rounded-lg h-12 px-6 text-base font-medium text-brand-marine-blue disabled:invisible"
                   onClick={() => {
                     handleNav(currentStep - 1);
                   }}

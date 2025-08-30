@@ -116,9 +116,6 @@ export default function DetailsPage() {
                   }}
                 />
               </FormControl>
-              {field.value && (
-                <p className="text-sm text-gray-600">{field.value.name}</p>
-              )}
               <FormMessage />
             </FormItem>
           )}

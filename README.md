@@ -51,6 +51,56 @@ A modern multi-step registration form built with React, TypeScript, and Tailwind
    - Step 3: Account Information (Email, Password)
    - Step 4: Confirmation Summary
 
+## Testing
+
+The project uses Vitest for unit testing with React Testing Library.
+
+### Running Tests
+
+1. **Run all tests:**
+   ```bash
+   npm test
+   ```
+
+2. **Run tests in watch mode:**
+   ```bash
+   npm run test:ui
+   ```
+
+3. **Run tests once and exit:**
+   ```bash
+   npm run test:run
+   ```
+
+4. **Run tests with coverage report:**
+   ```bash
+   npm run test:coverage
+   ```
+
+### Test Structure
+
+Tests are located alongside the components they test:
+```
+src/
+├── components/
+│   └── multi-step-register/
+│       ├── __tests__/
+│       │   ├── page.test.tsx           # Tests for main component
+│       │   └── confirmation-page.test.tsx # Tests for confirmation logic
+│       └── (component files)
+└── lib/
+    └── __tests__/
+        └── schema.test.ts              # Tests for form validation schema
+```
+
+### Test Coverage
+
+Current test coverage includes:
+- Form validation schema testing
+- Multi-step navigation logic
+- Confirmation page data display
+- Component rendering tests
+
 ## Technologies Used
 
 - React 18

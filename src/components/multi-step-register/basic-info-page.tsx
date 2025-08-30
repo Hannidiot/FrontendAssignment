@@ -69,7 +69,7 @@ export default function BasicInfoPage() {
                 <PopoverTrigger asChild>
                   <FormControl>
                     <Button
-                      variant={'outline'}
+                      variant="outline"
                       className={cn(
                         'w-[240px] pl-3 text-left font-normal text-sm text-brand-marine-blue',
                         !field.value && 'text-muted-foreground'
